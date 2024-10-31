@@ -1,6 +1,5 @@
 # Instalasi
 
-### *Di Termux/VPS*
 ```js
 git clone https://github.com/balxz/simple-apiBase
 cd simple-apiBase 
@@ -15,3 +14,4 @@ npm start
 3. Pilih + Dan Create New Projects
 4. Click Button Deploy
 > Setelah itu tunggu saja
+```
