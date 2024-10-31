@@ -1,10 +1,18 @@
 const axios = require("axios")
+const allowedApiKeys = require("../../declaration/arrayKey.jsx")
 
 module.exports = async (req, res) => {
   const q = req.query.q || ""
+  const apiKey = req.query.apiKey
   if (!q) {
     return res.status(400).json({
       error: "Mau nanya apa lu njir"
+    })
+  }
+  
+    if (!apiKey || !allowedApiKeys.includes(apiKey)) {
+    return res.status(403).json({
+      error: "Input Parameter Apikey !"
     })
   }
 

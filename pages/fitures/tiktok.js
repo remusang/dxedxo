@@ -1,20 +1,31 @@
 const axios = require("axios")
+const allowedApiKeys = require("../../declaration/arrayKey.jsx")
 
 module.exports = async (req, res) => {
-  let urls = req.query.urls
+  const urls = req.query.urls
+  const apiKey = req.query.apiKey
+
   if (!urls) {
     return res.status(400).json({
-      error: "Url Tiktok Nya Mana Btw"
+      error: "Url Tiktok Nya Mana?"
     })
   }
 
-  let url = `https://api.yanzbotz.live/api/downloader/tiktok?url=${urls}&apiKey=yanzdev`
+  if (!apiKey || !allowedApiKeys.includes(apiKey)) {
+    return res.status(403).json({
+      error: "Input Parameter Apikey !"
+    })
+  }
+
+  let url = `https://api.agatz.xyz/api/tiktok?url=${urls}`
 
   try {
     const response = await axios.get(url)
-    const videoUrl = response.data.result.video["no-watermark"]
+    const data = response.data.data
+    const videoUrlNoWatermark = data.data.find(item => item.type === "nowatermark").url
+
     res.status(200).json({
-      videoUrl
+      data: videoUrlNoWatermark
     })
   } catch (error) {
     res.status(500).json({

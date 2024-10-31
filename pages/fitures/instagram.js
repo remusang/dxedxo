@@ -1,4 +1,5 @@
 const axios = require("axios")
+const allowedApiKeys = require("../../declaration/arrayKey.jsx")
 
 module.exports = async (req, res) => {
   let urls = req.query.urls
@@ -8,15 +9,21 @@ module.exports = async (req, res) => {
     })
   }
 
-  let url = `https://api.yanzbotz.live/api/downloader/instagram?url=${urls}{&apiKey=yanzdev`
+  if (!apiKey || !allowedApiKeys.includes(apiKey)) {
+    return res.status(403).json({
+      error: "Input Parameter Apikey !"
+    })
+  }
+
+  let url = `https://api.agatz.xyz/api/instagram?url=${urls}`
+
   try {
     const response = await axios.get(url)
-    let data = response.data
-    let vid = data.result[0].url
+    const videoUrl = response.data.data.url_list[0]
     res.status(200).json({
-      video: vid
+      videoUrl
     })
-  } catch(e) {
+  } catch (e) {
     res.status(500).json({
       error: "Ada masalah, coba lagi nanti"
     })
