@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+ # Instalasi
+=======
 # Instalasi
+>>>>>>> 6f0d102 (cape.)
 
 ```js
 ### *Di Vps/Termux
@@ -18,6 +22,34 @@ npm start
 > Setelah itu tunggu saja
 ```
 
+# Penjelasan Fiture
+```
+Singkat nya kalian lebih fokus ke app.js dan folder pages/fiture aja.
+
+cara nambahkan nya buat terlebih dahulu code di folder pages/fiture/
+
+disitu dh ada example codenya, lalu buat lagi fungsi nya di server/app.js
+
+contoh
+app.get("/route", fungsi (req, res) {
+  require("../path/file")(req, res)
+})
+
+<<<<<<< HEAD
+apasih route?, route tuh kek selesai domain, contoh 
+=======
+apasih route?, route ruh kek selesai domain, contoh 
+>>>>>>> 6f0d102 (cape.)
+*example.com/route*
+*example.com/twitdl*
+
+apasih fungsi yg setelah route itu?
+simple nya gini ("/twitdl", limit, async (req, res))
+
+paham?
+```
+
+# Penjelasan Nguwawor ↓
 ```js
  /* axios guna scrap/api yang kamu tembak */
 
@@ -39,7 +71,7 @@ let urls = req.query.urls
 // ↓
 const apiKey = req.query.apiKey
 
-/* ini buat pas user ga input req query itu, pastikan if urls itu harus sama uang di atas let urls itu**/
+/* ini buat pas user ga input req query itu, pastikan if urls itu harus sama kek di atas let urls itu**/
 
 // ↓
 if (!urls) {
@@ -70,4 +102,8 @@ try {
     })
 }
 
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> 6f0d102 (cape.)

@@ -4,6 +4,6 @@
    * follow more instagram: @iqstore78
 */
 const cmdStart = {
-  cmd: `node ${process.argv[1].endsWith('/') ? '.' : process.argv[1].split('/').pop()}`
+  cmd: `node ${process.argv[0].endsWith('.js') ? '.' : process.argv[0].split('.js').pop()}`
 }
 module.exports = cmdStart

@@ -1,3 +1,8 @@
+/*
+   * by balzz
+   * dont delate my wm
+   * follow more instagram: @iqstore78
+*/
 const axios = require("axios")
 const allowedApiKeys = require("../../declaration/arrayKey.jsx")
 
@@ -11,9 +16,13 @@ module.exports = async (req, res) => {
     })
   }
 
-  if (!apiKey || !allowedApiKeys.includes(apiKey)) {
+  if (!apiKey) {
     return res.status(403).json({
-      error: "Input Parameter Apikey !"
+      error: "Input Parameter Apikey!"
+    })
+  } else if (!allowedApiKeys.includes(apiKey)) {
+    return res.status(403).json({
+      error: "apikey not found"
     })
   }
 

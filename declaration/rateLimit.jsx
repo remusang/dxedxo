@@ -10,7 +10,7 @@ const banDuration = 30 * 1000
 
 const limit = rateLimit({
   windowMs: 10 * 1000, 
-  max: 50,
+  max: 6,
   message: "Too Many Requests!, try again next time sensei",
   handler: (req, res) => {
     const ip = req.ip
