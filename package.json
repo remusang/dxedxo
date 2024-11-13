@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "memek",
   "version": "1.0.0",
   "main": "index.js",
@@ -18,19 +17,3 @@
     "express-rate-limit": "^7.4.1"
   }
 }
-=======
-  "main": "index.js",
-  "scripts": {
-    "start": "nodemon .",
-    "test": "node ."
-  },
-  "dev": "baxzzy",
-  "dependencies": {
-    "axios": "*",
-    "body-parser": "*",
-    "express": "*",
-    "express-rate-limit": "*",
-    "express-session": "*"
-  }
-}
->>>>>>> 6f0d102 (cape.)
