@@ -33,7 +33,8 @@ app.use(session({
 
 /* !=== PAGE ===! */
 app.get("/", limit, (req, res) => {
-    res.sendFile(process.cwd() + "/pages/404.html")
+    res.sendFile(path.join(__dirname, "../pages/404.html"))
+      //process.cwd() + "/pages/404.html")
 })
 
 app.get("/login", limit, (req, res) => {
