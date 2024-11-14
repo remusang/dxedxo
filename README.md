@@ -1,8 +1,5 @@
-<<<<<<< HEAD
- # Instalasi
-=======
+ 
 # Instalasi
->>>>>>> 6f0d102 (cape.)
 
 ```js
 ### *Di Vps/Termux
@@ -35,11 +32,8 @@ app.get("/route", fungsi (req, res) {
   require("../path/file")(req, res)
 })
 
-<<<<<<< HEAD
-apasih route?, route tuh kek selesai domain, contoh 
-=======
+
 apasih route?, route ruh kek selesai domain, contoh 
->>>>>>> 6f0d102 (cape.)
 *example.com/route*
 *example.com/twitdl*
 
@@ -101,9 +95,3 @@ try {
     error: "Ada masalah, coba lagi nanti"
     })
 }
-
-<<<<<<< HEAD
-```
-=======
-```
->>>>>>> 6f0d102 (cape.)
