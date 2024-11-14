@@ -34,15 +34,14 @@ app.use(session({
 /* !=== PAGE ===! */
 app.get("/", limit, (req, res) => {
     res.sendFile(path.join(__dirname, "../pages/404.html"))
-      //process.cwd() + "/pages/404.html")
 })
 
 app.get("/login", limit, (req, res) => {
-    res.sendFile(process.cwd() + "/pages/login.html")
+    res.sendFile(path.join(__dirname, "../pages/login.html"))
 })
 
 app.get("/profile", limit, isAuthenticated, (req, res) => {
-    res.sendFile(process.cwd() + "/pages/profile.html")
+    res.sendFile(path.join(__dirname, "../pages/profile.html"))
 })
 
 /* = ENDPOINT FITURE = */
@@ -75,7 +74,7 @@ app.get("/instagramDL", limit, async (req, res) => {
 })
 
 app.use((req, res, next) => {
-  res.status(404).sendFile(process.cwd() + "/pages/404.html")
+  res.status(404).sendFile(path.join(__dirname, "../pages/404.html"))
 })
 
 module.exports = app
