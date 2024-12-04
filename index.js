@@ -154,7 +154,7 @@ app.get("/", async(req, res) => {
   res.json({ main: { url: req.protocol + '://' + req.get('host'), services: [ "ytdl", "ttdl", "pindl", "ttdl", "igdl (MT)", "scdl", "mediafire", "autodl" ] } })
 })
 
-app.get("/autodl", async(req, res) => {
+app.post("/", async(req, res) => {
   const { url } = req.query;
   if(ytdl.validateURL(url)) {
     res.redirect(req.protocol + '://' + req.get('host') + "/ytdl?url=" + url)
